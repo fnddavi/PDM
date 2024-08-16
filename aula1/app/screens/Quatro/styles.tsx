@@ -4,36 +4,49 @@ import Constants from 'expo-constants';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingTop: Constants.statusBarHeight,
+        flexDirection: 'column',
+        paddingTop: Constants.statusBarHeight, // Adiciona o padding para evitar a StatusBar
     },
-    metadeSuperior: {
+    crimsonContainer: {
         flex: 0.5,
         backgroundColor: 'crimson',
-        flexDirection: 'row',
+        flexDirection: 'row', // Organiza os filhos em linha
     },
-    metadeInferior: {
+    limeBox: {
         flex: 0.5,
-        backgroundColor: 'salmon',
+        backgroundColor: 'lime', // Nova cor
+        justifyContent: 'center', // Centraliza a imagem verticalmente
+        alignItems: 'center', // Centraliza a imagem horizontalmente
     },
-    metadeEsquerda: {
-        flex: 0.5,
-        backgroundColor: 'lime',
-    },
-    metadeDireita: {
+    aquamarineContainer: {
         flex: 0.5,
         backgroundColor: 'aquamarine',
+        flexDirection: 'column', // Organiza os filhos em coluna
     },
-    metadeSupDireita: {
+    tealBox: {
         flex: 0.5,
-        backgroundColor: 'skyblue',
+        backgroundColor: 'teal', // Nova cor
+        justifyContent: 'center', // Centraliza a imagem verticalmente
+        alignItems: 'center', // Centraliza a imagem horizontalmente
     },
-    metadeInfDireita: {
+    skyblueBox: {
         flex: 0.5,
-        backgroundColor: 'teal'
+        backgroundColor: 'skyblue', // Nova cor
+        justifyContent: 'center', // Centraliza a imagem verticalmente
+        alignItems: 'center', // Centraliza a imagem horizontalmente
     },
-    imagem: {
-        flex: 1,
-        resizeMode: 'contain',
-        alignSelf: 'center',
+    salmonBox: {
+        flex: 0.5,
+        backgroundColor: 'salmon',
+        justifyContent: 'center', // Centraliza a imagem verticalmente
+        alignItems: 'center', // Centraliza a imagem horizontalmente
+    },
+    originalImage: {
+        width: 400, // Reduz a largura da imagem
+        height: 400, // Reduz a altura da imagem
+    },
+    reducedImage: {
+        width: 200, // Reduz a largura da imagem
+        height: 200, // Reduz a altura da imagem
     },
 });
