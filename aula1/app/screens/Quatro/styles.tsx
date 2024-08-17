@@ -41,12 +41,9 @@ export const styles = StyleSheet.create({
         justifyContent: 'center', // Centraliza a imagem verticalmente
         alignItems: 'center', // Centraliza a imagem horizontalmente
     },
-    originalImage: {
-        width: 400, // Reduz a largura da imagem
-        height: 400, // Reduz a altura da imagem
-    },
-    reducedImage: {
-        width: 200, // Reduz a largura da imagem
-        height: 200, // Reduz a altura da imagem
+    image: {
+        alignSelf: 'center', // Centraliza a imagem
+        flex: 1, // Preenche o espaço disponível
+        resizeMode: 'contain', // Redimensiona a imagem
     },
 });

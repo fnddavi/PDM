@@ -5,7 +5,6 @@ export const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        paddingHorizontal: 10,
         flexDirection: 'column',
         paddingTop: Constants.statusBarHeight, // Adiciona o padding para evitar a StatusBar
     },
@@ -43,18 +42,20 @@ export const styles = StyleSheet.create({
         justifyContent: 'center', // Centraliza a imagem verticalmente
         alignItems: 'center', // Centraliza a imagem horizontalmente
     },
-    originalImage: {
-        width: 64, // Reduz a largura da imagem
-        height: 64, // Reduz a altura da imagem
+    logo: {
+        alignSelf: 'center', // Centraliza a imagem
+        flex: 1, // Preenche o espaço disponível
+        resizeMode: 'contain', // Redimensiona a imagem
+        height: 64,
+        width: 64,
     },
-    reducedImage: {
-        width: 64, // Reduz a largura da imagem
-        height: 64, // Reduz a altura da imagem
-    },
+
     button: {
         alignItems: 'center',
         backgroundColor: '#DDDDDD',
         padding: 10,
-        opacity: 0.5, // Opacidade de 50%
+        opacity: 1,
+        height: 64,
+        width: 64,
       },
 });
