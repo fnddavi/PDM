@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Text, View, Button, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
-
 import { styles } from './styles';
 
-const Sete: React.FC = () => {
+const Oito: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [senha, setSenha] = useState<string>('');
     const [submittedEmail, setSubmittedEmail] = useState<string>('');
@@ -56,4 +55,4 @@ const Sete: React.FC = () => {
     );
 };
 
-export default Sete;
+export default Oito;
