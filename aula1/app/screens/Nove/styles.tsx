@@ -31,8 +31,9 @@ export const styles = StyleSheet.create({
   button: {
     flex: 1,
     padding: 10,
-    borderRadius: 25,
+    borderRadius: 5,
     alignItems: 'center',
+    marginHorizontal: 5,
     backgroundColor: '#ffd000',
     color: '#333',
 
@@ -43,7 +44,7 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
   },
   input: {
-    height: 40,
+    height: 50,
     width: '100%',
     borderColor: '#ccc',
     borderWidth: 1,
@@ -52,6 +53,15 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
     backgroundColor: '#fff',
   },
+  picker: {
+    height: 50,
+    width: '100%',
+    marginVertical: 10,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    color: '#333',
+},
   resultado: {
     color: '#fff',
     fontSize: 20,

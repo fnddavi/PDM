@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { Text, View, Button, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import { styles } from './styles';
+import { Picker } from '@react-native-picker/picker';
 
-const Oito: React.FC = () => {
+const Nove: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [senha, setSenha] = useState<string>('');
+    const [role, setRole] = useState<string>('manager');
     const [submittedEmail, setSubmittedEmail] = useState<string>('');
     const [submittedPassword, setSubmittedPassword] = useState<string>('');
     const [confirmarSenha, setConfirmarSenha] = useState<string>('');
+    const [submittedRole, setSubmittedRole] = useState<string>('');
 
     const handleLogin = () => {
         setSubmittedEmail(email);
         setSubmittedPassword(senha);
-        setConfirmarSenha(senha);
+        setSubmittedRole(role);
     }
 
     return (
@@ -49,6 +52,17 @@ const Oito: React.FC = () => {
                     maxLength={8}
                 />
 
+                <Text style={styles.textIn}>Escolha seu papel</Text>
+                <Picker
+                    selectedValue={role}
+                    onValueChange={(itemValue) => setRole(itemValue)}
+                    style={styles.picker}
+                >
+                    <Picker.Item label="Administrador" value="admin" />
+                    <Picker.Item label="Gestor" value="manager" />
+                    <Picker.Item label="Usuário" value="user" />
+                </Picker>
+
                 <View style={styles.containerButton}>
                     <TouchableOpacity style={styles.button} onPress={handleLogin}>
                         <Text style={styles.textIn}>Logar</Text>
@@ -70,4 +84,4 @@ const Oito: React.FC = () => {
     );
 };
 
-export default Oito;
+export default Nove;
