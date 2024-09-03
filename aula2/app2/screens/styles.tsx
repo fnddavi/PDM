@@ -1,35 +1,41 @@
-import { StyleSheet } from 'react-native';
 
-export const styles = StyleSheet.create({
+import { StyleSheet } from 'react-native';
+const styles = StyleSheet.create({
     container: {
         flex: 1,
+        flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#b6b6b6',
     },
-    logo: {
-        width: 140,
-        height: 140,
-        marginBottom: 20,
-    },
     title: {
+        display: 'flex',
         fontSize: 24,
         fontWeight: 'bold',
         marginBottom: 20,
+        color: '#fef'
     },
-    buttonsContainer: {
+    msg: {
+        fontSize: 20,
+        marginTop: 20,
+        color: '#fef'
+    },
+    rowButton: {
         flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-        width: '80%',
+        justifyContent: 'space-around',
+        margin: 20,
     },
     button: {
-        width: '45%', // Ajusta os botões para ocuparem 45% da largura
-        padding: 10,
-        marginBottom: 10,
         backgroundColor: '#FFA500',
+        padding: 10,
+        margin: 10,
         borderRadius: 5,
         alignItems: 'center',
+    },
+    buttonLabel: {
+        color: '#000',
+        fontSize: 16,
+        fontWeight: 'bold',
     },
     buttonText: {
         color: '#000',
@@ -37,3 +43,4 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
+export default styles;

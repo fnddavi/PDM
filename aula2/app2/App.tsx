@@ -1,22 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
-import { styles } from './styles';
-import Home from './screens/Home';
-import Hum from './screens/Hum';
-import Dois from './screens/Dois';
-import Tres from './screens/Tres';
-import Quatro from './screens/Quatro';
-import Cinco from './screens/Cinco';
-import Seis from './screens/Seis';
-import Sete from './screens/Sete';
-import Oito from './screens/Oito';
-import Nove from './screens/Nove';
-import Dez from './screens/Dez';
-import Onze from './screens/Onze';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './screens/home';
+import Manha from './screens/manha';
+import Tarde from './screens/tarde';
+import Noite from './screens/noite';
+import { RootStackParamList } from './types';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-export default function App() {
+const App: React.FC = () => {
   return (
-    <Onze />
- );
-}
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home" component={Home}
+          options={{ title: 'Início' }} />
+        <Stack.Screen
+          name="Morning" component={Manha}
+          options={{ title: 'Saudação de manhã' }} />
+        <Stack.Screen
+          name="Afternoon" component={Tarde}
+          options={{ title: 'Saudação da tarde' }} />
+        <Stack.Screen
+          name="Night" component={Noite}
+          options={{ title: 'Saudação para dormir' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+export default App;
