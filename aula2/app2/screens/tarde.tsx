@@ -6,11 +6,12 @@ import {
     TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
 import { RootStackParamList } from "../types";
 
 
-interface Props extends NativeStackScreenProps<RootStackParamList, "Morning"> { }
+interface Props extends BottomTabScreenProps<RootStackParamList, "Tarde"> {}
+
 const Tarde: React.FC<Props> = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>

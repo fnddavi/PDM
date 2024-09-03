@@ -3,7 +3,10 @@ import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
+
+
 interface Props extends NativeStackScreenProps<RootStackParamList, "Home"> { }
+
 const Home: React.FC<Props> = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
