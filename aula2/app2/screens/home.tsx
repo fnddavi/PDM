@@ -1,11 +1,16 @@
 import React from "react";
-import { View, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import {
+    View,
+    Text,
+    SafeAreaView,
+    TouchableOpacity,
+} from "react-native";
 import styles from "./styles";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { DrawerScreenProps } from "@react-navigation/drawer";
 import { RootStackParamList } from "../types";
 
 
-interface Props extends NativeStackScreenProps<RootStackParamList, "Home"> { }
+interface Props extends DrawerScreenProps<RootStackParamList, "Home"> { }
 
 const Home: React.FC<Props> = ({ navigation }) => {
     return (
@@ -34,4 +39,5 @@ const Home: React.FC<Props> = ({ navigation }) => {
         </SafeAreaView>
     );
 };
+
 export default Home;

@@ -6,11 +6,12 @@ import {
     TouchableOpacity,
 } from "react-native";
 import styles from "./styles";
-import { BottomTabScreenProps } from "@react-navigation/bottom-tabs";
+import { DrawerScreenProps } from "@react-navigation/drawer";
+
 import { RootStackParamList } from "../types";
 
 
-interface Props extends BottomTabScreenProps<RootStackParamList, "Tarde"> {}
+interface Props extends DrawerScreenProps<RootStackParamList, "Tarde"> {}
 
 const Tarde: React.FC<Props> = ({ navigation }) => {
     return (

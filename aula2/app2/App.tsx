@@ -1,23 +1,23 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import Ionicons from "react-native-vector-icons/Ionicons";
 import Home from "./screens/home";
 import Manha from "./screens/manha";
 import Tarde from "./screens/tarde";
 import Noite from "./screens/noite";
 import { RootStackParamList } from "./types";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ionicons from "react-native-vector-icons/Ionicons";
 
 
-const Tab = createBottomTabNavigator<RootStackParamList>();
+const Drawer = createDrawerNavigator<RootStackParamList>();
 
 const App: React.FC = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator
+      <Drawer.Navigator
         initialRouteName="Home"
         screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
+          drawerIcon: ({ color, size }) => {
             let iconName: string;
             switch (route.name) {
               case "Home":
@@ -35,32 +35,31 @@ const App: React.FC = () => {
               default:
                 iconName = "alert-circle-outline";
             }
-            // Retorna o componente de ícone
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
       >
-        <Tab.Screen
+        <Drawer.Screen
           name="Home"
           component={Home}
           options={{ title: "Início" }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="Morning"
           component={Manha}
           options={{ title: "Saudação de manhã" }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="Afternoon"
           component={Tarde}
           options={{ title: "Saudação da tarde" }}
         />
-        <Tab.Screen
+        <Drawer.Screen
           name="Night"
           component={Noite}
           options={{ title: "Saudação para dormir" }}
         />
-      </Tab.Navigator>
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };
