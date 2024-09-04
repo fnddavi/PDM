@@ -11,12 +11,12 @@ import { DrawerScreenProps } from "@react-navigation/drawer";
 import { RootStackParamList } from "../types";
 
 
-interface Props extends DrawerScreenProps<RootStackParamList, "Manha"> {}
+type Props = DrawerScreenProps<RootStackParamList, 'Night'>;
 
 const Manha: React.FC<Props> = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>Bom dia!</Text>
+            <Text style={styles.title}>Boa noite!</Text>
             <View style={styles.rowButton}>
                 <TouchableOpacity
                     style={styles.button}
@@ -34,5 +34,4 @@ const Manha: React.FC<Props> = ({ navigation }) => {
         </SafeAreaView>
     );
 };
-
 export default Manha;

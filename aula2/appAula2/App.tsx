@@ -8,7 +8,6 @@ import Tarde from "./screens/tarde";
 import Noite from "./screens/noite";
 import { RootStackParamList } from "./types";
 
-
 const Drawer = createDrawerNavigator<RootStackParamList>();
 
 const App: React.FC = () => {

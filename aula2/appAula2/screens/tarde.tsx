@@ -11,7 +11,7 @@ import { DrawerScreenProps } from "@react-navigation/drawer";
 import { RootStackParamList } from "../types";
 
 
-interface Props extends DrawerScreenProps<RootStackParamList, "Tarde"> {}
+type Props = DrawerScreenProps<RootStackParamList, 'Afternoon'>;
 
 const Tarde: React.FC<Props> = ({ navigation }) => {
     return (
