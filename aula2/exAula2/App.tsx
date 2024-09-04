@@ -21,7 +21,7 @@ const App: React.FC = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Onze'>
-      <Stack.Screen name='Onze' component={Onze} options={{ title: "Início" }} />
+      <Stack.Screen name='Onze' component={Onze} options={{ headerShown: false }} />
         <Stack.Screen name='Dez' component={Dez} options={{ title: "Dez" }} />
         <Stack.Screen name='Nove' component={Nove} options={{ title: "Nove" }} />
         <Stack.Screen name='Oito' component={Oito} options={{ title: "Oito" }} />
