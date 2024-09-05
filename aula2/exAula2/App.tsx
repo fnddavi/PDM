@@ -14,13 +14,59 @@ import Dez from './screens/Dez';
 import Onze from './screens/Onze';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
 
 const Drawer = createDrawerNavigator();
 
 const App: React.FC = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName='Hum'>
+      <Drawer.Navigator
+        initialRouteName='Hum'
+        screenOptions={({ route }) => ({
+          drawerIcon: ({ color, size }) => {
+            let iconName: string = '';
+
+            switch (route.name) {
+              case 'Hum':
+                iconName = 'home-outline';
+                break;
+              case 'Dois':
+                iconName = 'star-outline';
+                break;
+              case 'Tres':
+                iconName = 'settings-outline';
+                break;
+              case 'Quatro':
+                iconName = 'person-outline';
+                break;
+              case 'Cinco':
+                iconName = 'mail-outline';
+                break;
+              case 'Seis':
+                iconName = 'alert-outline';
+                break;
+              case 'Sete':
+                iconName = 'cart-outline';
+                break;
+              case 'Oito':
+                iconName = 'chatbubble-outline';
+                break;
+              case 'Nove':
+                iconName = 'cloud-outline';
+                break;
+              case 'Dez':
+                iconName = 'game-controller-outline';
+                break;
+              default:
+                iconName = 'help-outline';
+                break;
+            }
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+      >
         <Drawer.Screen name='Hum' component={Hum} options={{ title: "Hum" }} />
         <Drawer.Screen name='Dois' component={Dois} options={{ title: "Dois" }} />
         <Drawer.Screen name='Tres' component={Tres} options={{ title: "Três" }} />
