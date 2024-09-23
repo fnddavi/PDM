@@ -1,3 +1,3 @@
 # PROGRAMACAO EM DISPOSITIVOS MOVEIS
 
-## FATEC Jacareí
+Atividades da matéria "Programação para Dispositivos Móveis" com o Professor [Arley](https://github.com/arleysouza)
