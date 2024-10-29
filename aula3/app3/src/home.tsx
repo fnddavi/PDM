@@ -1,6 +1,7 @@
+import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator, DrawerNavigationProp } from '@react-navigation/drawer';
-import { Button, View, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import { Button, View, StyleSheet, StatusBar, TouchableOpacity, ScrollView, Image } from 'react-native';
 import SmsScreen from './resources/sms';
 import WhatsappScreen from './resources/whatsapp';
 import MailScreen from './resources/mail';
@@ -10,6 +11,7 @@ import PhotoScreen from './resources/photo';
 import GaleryScreen from './resources/galery';
 import CameraScreen from './resources/camera';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 
 type DrawerParamList = {
   Home: undefined;
@@ -32,6 +34,27 @@ type HomeScreenProps = {
 const Drawer = createDrawerNavigator();
 
 function HomeScreen({ navigation }: HomeScreenProps) {
+  const [imageUris, setImageUris] = useState<string[]>([]);
+
+  const handleTakePhoto = () => {
+    launchCamera({ mediaType: 'photo' }, (response) => {
+      if (response.assets) {
+        const uris = response.assets.map(asset => asset.uri).filter(uri => uri !== undefined) as string[];
+        setImageUris(prev => [...prev, ...uris]);
+      }
+    });
+  };
+
+  const handleChoosePhoto = () => {
+    launchImageLibrary({ mediaType: 'photo' }, (response) => {
+      if (response.assets) {
+        const uris = response.assets.map(asset => asset.uri).filter(uri => uri !== undefined) as string[];
+        setImageUris(prev => [...prev, ...uris]);
+      }
+    });
+  };
+
+
   return (
     <View style={styles.container}>
       <View style={styles.buttonContainer}>
@@ -41,14 +64,21 @@ function HomeScreen({ navigation }: HomeScreenProps) {
         <Button onPress={() => navigation.navigate('Maps')} title="MAPS" />
         <Button onPress={() => navigation.navigate('contacts')} title="Contatos" />
       </View>
+
       <View style={styles.iconContainer}>
-        <TouchableOpacity onPress={() => navigation.navigate('galery')}>
+        <TouchableOpacity onPress={handleChoosePhoto}>
           <Icon name="photo" size={30} color="deepskyblue" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('photo')}>
+        <TouchableOpacity onPress={handleTakePhoto}>
           <Icon name="photo-camera" size={30} color="deepskyblue" />
         </TouchableOpacity>
       </View>
+
+      <ScrollView contentContainerStyle={styles.scrollView}>
+        {imageUris.map((uri, index) => (
+          <Image key={index} source={{ uri }} style={styles.image} />
+        ))}
+      </ScrollView>
     </View>
   );
 }
@@ -76,16 +106,33 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#a0a0a0',
   },
   buttonContainer: {
-    marginBottom: 50, // Ajuste conforme necessário
+    marginBottom: 50,
+    marginTop: 50,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    width: 'auto',
+
   },
   iconContainer: {
     position: 'absolute',
-    top: StatusBar.currentHeight ? StatusBar.currentHeight + 10 : 10, // Ajusta a posição considerando a altura da StatusBar
+    top: StatusBar.currentHeight ? StatusBar.currentHeight + 10 : 10,
     right: 20, // Alinha à direita
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     width: 100, // Largura para os botões
+  },
+  scrollView: {
+    flexGrow: 1,
+    alignItems: 'center',
+    padding: 10,
+  },
+  image: {
+    width: 100, // Largura da imagem
+    height: 100, // Altura da imagem
+    margin: 5,
+    borderRadius: 5, // Para cantos arredondados
   },
 });
