@@ -14,7 +14,30 @@ interface LotteryData {
         valorEstimadoProximoConcurso: number;
         valorPremio: number;
     };
-    // Adicione outras loterias conforme necessário
+    quina?: {
+        acumulado: boolean;
+        concursoEspecial: boolean;
+        dataApuracao: string;
+        dataPorExtenso: string;
+        dataProximoConcurso: string;
+        dezenas: string[];
+        numeroDoConcurso: number;
+        quantidadeGanhadores: number;
+        valorEstimadoProximoConcurso: number;
+        valorPremio: number;
+    };
+    timemania?: {
+        acumulado: boolean;
+        concursoEspecial: boolean;
+        dataApuracao: string;
+        dataPorExtenso: string;
+        dataProximoConcurso: string;
+        dezenas: string[];
+        numeroDoConcurso: number;
+        quantidadeGanhadores: number;
+        valorEstimadoProximoConcurso: number;
+        valorPremio: number;
+    };
 }
 
 interface LotteryContextProps {
