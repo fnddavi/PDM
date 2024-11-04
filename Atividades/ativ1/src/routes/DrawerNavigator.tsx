@@ -1,8 +1,6 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-
-// Importando suas telas
 import MegaSena from '../screens/MegaSena';
 import Quina from '../screens/Quina';
 import Timemania from '../screens/Timemania';

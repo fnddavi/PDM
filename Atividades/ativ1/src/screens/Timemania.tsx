@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { LotteryContext } from '../contexts/LotteryContext';
 import Ball from '../components/Ball';
-import { styles } from './megaStyles';
+import { styles } from './timemaniaStyles';
 
 const TimemaniaScreen: React.FC = () => {
     const { lotteryData, loading, error } = useContext(LotteryContext);
@@ -31,7 +31,7 @@ const TimemaniaScreen: React.FC = () => {
             <FlatList
                 data={timemania?.dezenas}
                 keyExtractor={(item) => item}
-                renderItem={({ item }) => <Ball number={item} color="#209869" />}
+                renderItem={({ item }) => <Ball number={item} color={styles.numberCircle.backgroundColor} />}
                 horizontal
                 contentContainerStyle={styles.numbersContainer}
             />

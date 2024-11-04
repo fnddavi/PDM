@@ -1,7 +1,6 @@
 // Arquivo de configuração de tema da aplicação
 const theme = {
     colors: {
-        primary: '#209869',
         background: '#f0f0f0',
         text: '#333', 
         textSecondary: '#666', 

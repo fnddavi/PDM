@@ -20,6 +20,16 @@ export const styles = StyleSheet.create({
         justifyContent: 'center',
         marginBottom: theme.spacing.large,
     },
+    numberCircle: {
+        backgroundColor: '#FFF600',
+        borderRadius: theme.borderRadius.circle,
+        padding: theme.spacing.small,
+        marginHorizontal: theme.spacing.small / 2,
+    },
+    numberText: {
+        color: '#049645', // Cor do texto dos números
+        fontSize: theme.fontSizes.regular,
+    },
     dateText: {
         fontSize: theme.fontSizes.subtitle,
         color: theme.colors.textSecondary,

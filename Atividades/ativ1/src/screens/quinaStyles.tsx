@@ -4,7 +4,7 @@ import theme from '../themes/theme';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: theme.colors.background,
+        backgroundColor: theme.colors.background, // Cor de fundo padrão (cinza claro)
         alignItems: 'center',
         justifyContent: 'center',
         padding: theme.spacing.medium,
@@ -19,6 +19,16 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         marginBottom: theme.spacing.large,
+    },
+    numberCircle: {
+        backgroundColor: '#260085', // Cor roxa específica para Quina
+        borderRadius: theme.borderRadius.circle,
+        padding: theme.spacing.small,
+        marginHorizontal: theme.spacing.small / 2,
+    },
+    numberText: {
+        color: theme.colors.white, // Cor do texto dos números
+        fontSize: theme.fontSizes.regular,
     },
     dateText: {
         fontSize: theme.fontSizes.subtitle,
