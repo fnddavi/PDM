@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         textAlign: 'center',
-        fontSize: 28,
+        fontSize: 22,
         fontWeight: 'bold'
     },
 
