@@ -1,12 +1,15 @@
-//src/types/index.ts
-
-export interface caixaResultados {
-  megasena: sorteioResultados;
-  timemania: sorteioResultados;
-  quina: sorteioResultados;
+export interface Contact {
+  id?: number;
+  name: string;
+  latitude: number;
+  longitude: number;
+  address: string;
 }
 
-export interface sorteioResultados {
-  dataPorExtenso: string;
-  dezenas: Array<string>;
-}
+export type RootStackParamList = {
+  Welcome: undefined;
+  Contacts: undefined;
+  AddContact: undefined;
+  Location: { contact: Contact };
+};
+
