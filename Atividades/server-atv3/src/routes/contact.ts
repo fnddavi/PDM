@@ -3,21 +3,21 @@ import controller from "../controllers/ContactController";
 
 const routes = Router();
 
-// http://localhost:3011/
-routes.get("/", controller.getAll);
+// Listar todos os contatos
+routes.get("/contacts", controller.getAll);
 
-// http://localhost:3011/
-routes.post("/", controller.create);
+// Criar um novo contato
+routes.post("/contacts", controller.create);
 
-// http://localhost:3011/
-routes.delete("/", controller.remove);
+// Atualizar um contato
+routes.put("/contacts", controller.update);
 
-// http://localhost:3011/
-routes.put("/", controller.update);
+// Remover um contato
+routes.delete("/contacts", controller.remove);
 
-// Captura qualquer método HTTP ou URL que não foi atendido anteriormente
-routes.use("*", function(_: Request, res: Response){
-  res.json({ error: "Requisição desconhecidax" });
+// Rota para capturar requisições desconhecidas
+routes.use("*", function(_: Request, res: Response) {
+  res.status(404).json({ error: "Requisição desconhecida" });
 });
 
 export default routes;
