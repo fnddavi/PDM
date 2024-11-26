@@ -1,0 +1,11 @@
+{
+    "expo": {
+      "name": "atv3",
+      "slug": "atv3",
+      "version": "1.0.0",
+      "orientation": "portrait",
+      "icon": "./assets/icon.png",
+      "userInterfaceStyle": "light"
+    }
+  }
+  
